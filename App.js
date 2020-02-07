@@ -16,7 +16,7 @@ class App extends Component {
   render () {
     return (
   <View>
-      <Text>Hello world 1112sdsd!!</Text>
+      <Text>Testing code push</Text>
       <TouchableOpacity onPress={()=> {CodePush.sync({
       updateDialog: true,
       installMode: CodePush.InstallMode.IMMEDIATE
