@@ -14,6 +14,7 @@ import {
   View,
   Text,
   StatusBar,
+  TouchableOpacity
 } from 'react-native';
 
 import {
@@ -24,8 +25,14 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
+
+import codePush from "react-native-code-push";
+
+
 const App: () => React$Node = () => {
   return (
+
+    
     <>
       <StatusBar barStyle="dark-content" />
       <SafeAreaView>
@@ -46,6 +53,14 @@ const App: () => React$Node = () => {
                 screen and then come back to see your edits.
               </Text>
             </View>
+
+            <TouchableOpacity onPress={()=>{codePush.sync({
+                updateDialog: true,
+                installMode: codePush.InstallMode.IMMEDIATE
+              });}}>
+                      <Text>Check for updates</Text>
+                    </TouchableOpacity>
+
             <View style={styles.sectionContainer}>
               <Text style={styles.sectionTitle}>See Your Changes</Text>
               <Text style={styles.sectionDescription}>
@@ -66,11 +81,22 @@ const App: () => React$Node = () => {
             </View>
             <LearnMoreLinks />
           </View>
+
+          
         </ScrollView>
       </SafeAreaView>
     </>
   );
+  // onButtonPress = () {
+  //   codePush.sync({
+  //     updateDialog: true,
+  //     installMode: codePush.InstallMode.IMMEDIATE
+  //   });
+  // }
+  
 };
+
+
 
 const styles = StyleSheet.create({
   scrollView: {

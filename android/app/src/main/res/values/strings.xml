@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">ReactNativeCodePush</string>
+    <string name="reactNativeCodePush_androidDeploymentKey">VjBfuG4jQ2Zg-dm7rcHEK5FbsrW-Nn5F_S7qp</string>
+    <string name="CodePushDeploymentKey">VjBfuG4jQ2Zg-dm7rcHEK5FbsrW-Nn5F_S7qp</string>
 </resources>
