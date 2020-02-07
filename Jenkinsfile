@@ -1,5 +1,9 @@
 pipeline {
     agent { docker { image 'node:10.0' } }
+
+    triggers {
+        pollSCM('') //Empty quotes tells it to build on a push
+    }
     stages {
         stage('build') {
             steps {
