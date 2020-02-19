@@ -13,11 +13,16 @@ import CodePush from "react-native-code-push";
 
 class App extends Component {
 
+  codePushDownloadDidProgress(progress) {
+    console.log(progress.receivedBytes + " of " + progress.totalBytes + " received.");
+  }
+
   render () {
     return (
-  <View>
-      <Text>Code push test success !!! </Text>
-      <TouchableOpacity onPress={()=> {CodePush.sync({
+  <View style={{flex:1, flexDirection:'column'}}>
+      <Text style={{flex:1, alignSelf:'center',fontSize: 40}}> Headerq 112 </Text>
+      <Text style={{flex:3, alignSelf:'center'}}>Test code push asdasd !!! </Text>
+      <TouchableOpacity style={{flex:2, alignItems:'center'}} onPress={()=> {CodePush.sync({
       updateDialog: true,
       installMode: CodePush.InstallMode.IMMEDIATE
     });}}>
