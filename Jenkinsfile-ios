@@ -11,7 +11,7 @@ pipeline {
             }
         }
 
-        stage('android-codepush') {
+        stage('ios-codepush') {
             steps {
                 sh 'npm update'
                 sh 'npm install -g appcenter-cli'
