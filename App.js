@@ -20,7 +20,7 @@ class App extends Component {
   render () {
     return (
   <View style={{flex:1, flexDirection:'column'}}>
-      <Text style={{flex:1, alignSelf:'center',fontSize: 40}}> Header1 </Text>
+      <Text style={{flex:1, alignSelf:'center',fontSize: 40}}> Header </Text>
       <Text style={{flex:3, alignSelf:'center'}}>Test code push asdasd !!! </Text>
       <TouchableOpacity style={{flex:2, alignItems:'center'}} onPress={()=> {CodePush.sync({
       updateDialog: true,
