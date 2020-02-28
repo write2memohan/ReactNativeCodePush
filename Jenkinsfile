@@ -5,19 +5,37 @@ pipeline {
         pollSCM('') //Empty quotes tells it to build on a push
     }
     stages {
-        stage('build') {
+        stage('download-coupon-json') {
+            steps {
+                sh 'pwd'
+            }
+        }
+
+        stage('check-node-version') {
             steps {
                 sh 'node --version'
             }
         }
 
-        stage('android-codepush') {
+        stage('install-appcenter-dependencies') {
             steps {
                 sh 'npm update'
                 sh 'npm install -g appcenter-cli'
-                sh 'npm install'
-                sh 'appcenter login --token 5faed56c60fe61ca3183c26eb5a5184e22d925b4'                
+                sh 'npm install'                
+            }
+        }
+
+        stage('login-appcenter') {
+            steps {                
+                sh 'appcenter login --token 5faed56c60fe61ca3183c26eb5a5184e22d925b4'                       
+            }
+        }
+
+        stage('codepush-android') {
+            steps {
+                              
                 sh 'appcenter codepush release-react -a write2memohan/ReactNativeCodePush -d Staging'
+                sh 'appcenter logout'
             }
         }
     }
