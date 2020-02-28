@@ -8,6 +8,7 @@ pipeline {
         stage('download-coupon-json') {
             steps {
                 sh 'pwd'
+                sh 'curl -o ./Coupons.json https://s3.amazonaws.com/misc.rtg-prod.com/Coupons.json'
             }
         }
 
